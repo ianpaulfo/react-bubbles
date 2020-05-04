@@ -11,4 +11,4 @@ const axiosWithAuth = () => {
     })
 }
 
-export default axiosWithAuth 
+export default axiosWithAuth;
