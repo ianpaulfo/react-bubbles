@@ -1,6 +1,34 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import styled from "styled-components";
+
+const Body = styled.body`
+background-color: black;
+`;
+const Div = styled.header`
+  margin: auto;
+  width: 66%;
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: #01FFFF;
+  padding: 0.25em 1em;
+`;
+const Label = styled.div`
+  text-align: center;
+  height: 10%;
+`;
+const Button = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: #01FFFF;
+  margin: auto;
+  padding: 0.25em 1em;
+`;
+
+
 const Login = props => {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
@@ -30,32 +58,32 @@ const Login = props => {
   };
 
   return (
-    <>
-      <h1>Welcome to the Bubble App!</h1>
+    <Body>
+      <Div>Welcome to the Bubble App!</Div>
       <div className="loginForm">
         <form name="login">
-        <div className="loginInputContainer">
-        <label htmlFor="username">Username</label>
+        <Div className="loginInputContainer">
+        <Label htmlFor="username">Username</Label>
           <input
             type="text"
             name="username"
             value={user.username}
             onChange={handleChange}
           />
-        </div>
-        <div className="loginInputContainer">
-          <label htmlFor="password">Password</label>
+        </Div>
+        <Div className="loginInputContainer">
+          <Label htmlFor="password">Password</Label>
           <input
             type="password"
             name="password"
             value={user.password}
             onChange={handleChange}
           />
-        </div>
-        <button onClick={handleSubmit}>Log in</button>
+        </Div>
+        <Button onClick={handleSubmit}>Log in</Button>
       </form>
     </div>
-    </>
+    </Body>
   );
 };
 

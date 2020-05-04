@@ -88,7 +88,7 @@ const ColorList = ({ colors, updateColors }) => {
           <legend>add color</legend>
           <label>
             color name:
-            <input
+            <input 
               onChange={e =>
                 setcolorToAdd({ ...colorToAdd, color: e.target.value })
               }
@@ -112,9 +112,9 @@ const ColorList = ({ colors, updateColors }) => {
           </div>
         </form>
       </div>
-      <ul>
+      <ul className="color-list">
         {colors.map(color => (
-          <li key={color.color} onClick={() => editColor(color)}>
+          <li className="color-box-holder" key={color.color} onClick={() => editColor(color)}>
             <span>
               <span className="delete" onClick={e => {
                     e.stopPropagation();
@@ -133,7 +133,7 @@ const ColorList = ({ colors, updateColors }) => {
         ))}
       </ul>
       {editing && (
-        <form onSubmit={saveEdit}>
+        <form className="edit-box" onSubmit={saveEdit}>
           <legend>edit color</legend>
           <label>
             color name:
